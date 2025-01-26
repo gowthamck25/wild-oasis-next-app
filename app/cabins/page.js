@@ -1,7 +1,9 @@
-import CabinList from "@/app/_components/CabinList";
-import Spinner from "@/app/_components/Spinner";
 import { Suspense } from "react";
+import CabinList from "../_components/CabinList";
+import Spinner from "../_components/Spinner";
+import Counter from "../_components/Counter";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 export const revalidate = 3600;
 // export const revalidate = 15;
@@ -10,16 +12,15 @@ export const metadata = {
   title: "Cabins",
 };
 
-
 export default function Page({ searchParams }) {
   const filter = searchParams?.capacity ?? "all";
 
   return (
     <div>
-      <h1 className="mb-5 text-4xl font-medium text-accent-400">
-        Ou r Luxury Cabins
+      <h1 className="text-4xl mb-5 text-accent-400 font-medium">
+        Our Luxury Cabins
       </h1>
-      <p className="mb-10 text-lg text-primary-200">
+      <p className="text-primary-200 text-lg mb-10">
         Cozy yet luxurious cabins, located right in the heart of the Italian
         Dolomites. Imagine waking up to beautiful mountain views, spending your
         days exploring the dark forests around, or just relaxing in your private
@@ -34,6 +35,7 @@ export default function Page({ searchParams }) {
 
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );

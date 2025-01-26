@@ -1,5 +1,6 @@
 import Image from "next/image";
 import image1 from "@/public/about-1.jpg";
+import image2 from "@/public/about-2.jpg";
 import { getCabins } from "../_lib/data-service";
 
 export const revalidate = 86400;
@@ -8,14 +9,13 @@ export const metadata = {
   title: "About",
 };
 
-
 export default async function Page() {
-  const cabins = await getCabins(); 
-  
+  const cabins = await getCabins();
+
   return (
-    <div className="grid grid-cols-5 items-center gap-x-24 gap-y-32 text-lg">
+    <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
-        <h1 className="mb-10 text-4xl font-medium text-accent-400">
+        <h1 className="text-4xl mb-10 text-accent-400 font-medium">
           Welcome to The Wild Oasis
         </h1>
 
@@ -28,10 +28,10 @@ export default async function Page() {
             and enjoying simple pleasures with family.
           </p>
           <p>
-            Our {cabins.length} luxury cabins provide a cozy base, but the real freedom and
-            peace you&apos;ll find in the surrounding mountains. Wander through
-            lush forests, breathe in the fresh air, and watch the stars twinkle
-            above from the warmth of a campfire or your hot tub.
+            Our {cabins.length} luxury cabins provide a cozy base, but the real
+            freedom and peace you&apos;ll find in the surrounding mountains.
+            Wander through lush forests, breathe in the fresh air, and watch the
+            stars twinkle above from the warmth of a campfire or your hot tub.
           </p>
           <p>
             This is where memorable moments are made, surrounded by
@@ -50,7 +50,7 @@ export default async function Page() {
         />
       </div>
 
-      <div className="relative col-span-2 aspect-square">
+      <div className="relative aspect-square col-span-2">
         <Image
           src="/about-2.jpg"
           fill
@@ -60,7 +60,7 @@ export default async function Page() {
       </div>
 
       <div className="col-span-3">
-        <h1 className="mb-10 text-4xl font-medium text-accent-400">
+        <h1 className="text-4xl mb-10 text-accent-400 font-medium">
           Managed by our family since 1962
         </h1>
 
@@ -83,7 +83,7 @@ export default async function Page() {
           <div>
             <a
               href="/cabins"
-              className="mt-4 inline-block bg-accent-500 px-8 py-5 text-lg font-semibold text-primary-800 transition-all hover:bg-accent-600"
+              className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
             >
               Explore our luxury cabins
             </a>
