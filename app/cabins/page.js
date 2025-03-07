@@ -18,7 +18,7 @@ export default function Page({ searchParams }) {
   return (
     <div>
       <h1 className="mb-5 text-4xl font-medium text-accent-400">
-        Ou r Luxury Cabins
+        Our Luxury Cabins
       </h1>
       <p className="mb-10 text-lg text-primary-200">
         Cozy yet luxurious cabins, located right in the heart of the Italian

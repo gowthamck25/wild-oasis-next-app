@@ -4,9 +4,9 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useReservation } from "./ReservationContext";
 
 function Filter() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
+  const searchParams = useSearchParams(); // to get curren params
+  const router = useRouter(); // to get the router
+  const pathname = usePathname(); // to get current pathname
 
   const activeFilter = searchParams.get("capacity") ?? "all";
 
